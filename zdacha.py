@@ -81,7 +81,9 @@ class Change(customtkinter.CTkFrame):
         
     def CalculateExchange(self):
         self.total_change = float(self.entrycustomer.get()) - float(self.price.get())
-        self.labelresult.configure(text = f"{str(self.total_change)}")
+        formatted_total_change = "{:.2f}".format(self.total_change)
+        self.labelresult.configure(text=f"{formatted_total_change}")
+
 
 class App(customtkinter.CTk):
     def __init__(self):
